@@ -174,7 +174,22 @@ $(function() {
   //   $(this).text('I woa hovered');
   // });
 
-  
+  let blueBox = $('.blue-box');
+  // blueBox.mouseenter(function() {
+  //   $(this).stop().fadeTo(500, 0.7);
+  // })
+
+  // blueBox.mouseleave( function() {
+  //   $(this).stop().fadeTo( 500, 1);
+  // });
+
+  // hover (handlerIn, handlerOut)
+  blueBox.hover( function() {
+    $(this).stop().fadeTo( 500, 0.7);
+  }, function() {
+    $(this).stop().fadeTo( 500, 1);
+  }
+  )
 
 
   // window.location.replace('https://google.com')
