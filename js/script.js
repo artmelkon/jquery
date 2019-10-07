@@ -29,7 +29,7 @@ $(function() {
 
   // $('li').replaceWith('<li>Replaced</li>');
   // $('li').replaceWith( () => {
-  //   return $('<li>Rreplaced with function</li>');
+  //   return $('<li>Replaced with function</li>');
   // });
 
   // let firstListItem = $('li:first');
@@ -116,34 +116,65 @@ $(function() {
 
 // $('.dummy').removeClass('dummy').addClass('green-box');
 
-  var gallery = $('.gallery'),
-      images = [
-        'images/laptop-mobile_small.jpg',
-        'images/laptop-on-table_small.jpg',
-        'images/people-office-group-team_small.jpg'
-      ];
 
-  gallery.data('availableImages', images)
-  console.log(gallery.data('availableImages'));
-  gallery.data('name', 'My awesome gallery');
-  console.log(gallery.data('name'));
-  console.log(gallery.data());
-  gallery.removeData('name');
-  console.log(gallery.data());
+  /* ======================================== *\
+      passing data to memory of jquery
+  \* ======================================== */
+  // var gallery = $('.gallery'),
+  //     images = [
+  //       'images/laptop-mobile_small.jpg',
+  //       'images/laptop-on-table_small.jpg',
+  //       'images/people-office-group-team_small.jpg'
+  //     ];
+
+
+  // gallery.data('availableImages', images)
+  // console.log(gallery.data('availableImages'));
+  // gallery.data('name', 'My awesome gallery');
+  // console.log(gallery.data('name'));
+  // console.log(gallery.data());
+  // gallery.removeData('name');
+  // console.log(gallery.data());
 
 
   
-  // text(), html()
-  var firstPar = $('p:first');
-  console.log(firstPar.data('mydata'));
-  console.log(firstPar.text());
-  console.log(firstPar.html());
+  // // text(), html()
+  // var firstPar = $('p:first');
+  // console.log(firstPar.data('mydata'));
+  // console.log(firstPar.text());
+  // console.log(firstPar.html());
 
 
   // firstPar.text('<strong>Hello</strong> World!');
   // firstPar.html('<string>Hello</string> World!');
-  // firstPar.html(firstPar.html() +'This is appendied text!');
-  firstPar.append('This is appendied text!');
+  // firstPar.html(firstPar.html() +'This is appended text!');
+  // firstPar.append('This is appended text!');
+
+  /* ** click event ** */
+
+  // $('#btn-click').on('click', function(event) {
+  //   console.log(event);
+  //   alert("Button clicked");
+  // });
+
+  // $('.red-box').click( function() {
+  //   // console.log('clicked')
+  //   $(this).fadeTo( 500, 0.5);
+  // });
+
+  // $('.red-box').click();
+
+  // HOVER HANDLER
+  // $('#btn-hover').hover( function(event) {
+  //   console.log(event)
+  //   alert("this is a hover trigger");
+  // });
+
+  // $('.green-box').hover( function() {
+  //   $(this).text('I woa hovered');
+  // });
+
+  
 
 
   // window.location.replace('https://google.com')
