@@ -140,9 +140,10 @@ $(function() {
   console.log(firstPar.html());
 
 
-  firstPar.text('<strong>Hello</strong> World!');
-  firstPar.html('<string>Hello</string> World!');
-  firstPar.append('This is appendied text!');
+  // firstPar.text('<strong>Hello</strong> World!');
+  // firstPar.html('<string>Hello</string> World!');
+  // firstPar.html(firstPar.html() +'This is appendied text!');
+  // firstPar.append('This is appendied text!');
 
 
   // window.location.replace('https://google.com')
