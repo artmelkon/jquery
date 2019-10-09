@@ -174,7 +174,7 @@ $(function() {
   //   $(this).text('I woa hovered');
   // });
 
-  let blueBox = $('.blue-box');
+  // let blueBox = $('.blue-box');
   // blueBox.mouseenter(function() {
   //   $(this).stop().fadeTo(500, 0.7);
   // })
@@ -183,13 +183,32 @@ $(function() {
   //   $(this).stop().fadeTo( 500, 1);
   // });
 
-  // hover (handlerIn, handlerOut)
-  blueBox.hover( function() {
-    $(this).stop().fadeTo( 500, 0.7);
-  }, function() {
-    $(this).stop().fadeTo( 500, 1);
-  }
-  )
+  // // hover (handlerIn, handlerOut)
+  // blueBox.hover( function() {
+  //   $(this).stop().fadeTo( 500, 0.7);
+  //   }, function() {
+  //     $(this).stop().fadeTo( 500, 1);
+  //   }
+  // )
+
+  // $('html').on('click keydown', function () {
+  //   console.log('mouse was clicked')
+  // });
+
+  let images = [
+    'images/laptop-mobile_small.jpg',
+    'images/laptop-on-table_small.jpg',
+    'images/people-office-group-team_small.jpg'
+  ],
+      i = 0;
+
+
+  $('.gallery').find('img').on('click keydown', function() {
+    i = (i + 1) % images.length;
+    $(this).fadeOut( function() {
+      $(this).attr('src', images[i]).fadeIn();
+    });
+  })
 
 
   // window.location.replace('https://google.com')
