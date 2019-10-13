@@ -194,21 +194,38 @@ $(function() {
   // $('html').on('click keydown', function () {
   //   console.log('mouse was clicked')
   // });
+/* ====================================== *\
+    gallery rotate image
+\* ====================================== */
+  // let images = [
+  //   'images/laptop-mobile_small.jpg',
+  //   'images/laptop-on-table_small.jpg',
+  //   'images/people-office-group-team_small.jpg'
+  // ],
+  //     i = 0;
+  
+  // // $('.gallery').find('img').on('click keydown', function() {
+  // //   i = (i + 1) % images.length;
+  // //   $(this).fadeOut( function() {
+  // //     $(this).attr('src', images[i]).fadeIn();
+  // //   });
+  // // })
 
-  let images = [
-    'images/laptop-mobile_small.jpg',
-    'images/laptop-on-table_small.jpg',
-    'images/people-office-group-team_small.jpg'
-  ],
-      i = 0;
+  // let galleryImage = $('.gallery').find('img');
 
+  // galleryImage.on('click', showGallery);
+  // // $('html').on('click keydown', logEvent)
+  // function showGallery () {
+  //   i = (i + 1) % images.length;
+  //       i = (i + 1) % images.length;
+  //   galleryImage.fadeOut( function() {
+  //     $(this).attr('src', images[i]).fadeIn();
+  //   });
+  // }
+/* =========================================== *\
+  end of gallery
+\* =========================================== */
 
-  $('.gallery').find('img').on('click keydown', function() {
-    i = (i + 1) % images.length;
-    $(this).fadeOut( function() {
-      $(this).attr('src', images[i]).fadeIn();
-    });
-  })
 
 
   // window.location.replace('https://google.com')
