@@ -228,8 +228,21 @@ $(function() {
   let mouseEvent = $('body');
   mouseEvent.on('mouseenter', 'li', function() {
     $(this).css('color', 'lightgreen');
-  })
+  });
 
+  $('#btn-click').click({
+    user: "Peter",
+    domain: "artmelkon.com"
+  }, function(event) {
+    greetUser(event.data)
+  });
+
+  function greetUser(userdata) {
+    username =  userdata.user || "Anonymous"
+    domain   =  userdata.domain || 'example.com';
+    
+    alert('Welcome back ' + username + ' from ' + domain + "!");
+  }
   // window.location.replace('https://google.com')
 
   // var uriV = document.querySelector('#special-link').setAttribute('style', 'color:red');
