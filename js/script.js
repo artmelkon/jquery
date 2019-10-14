@@ -225,8 +225,10 @@ $(function() {
 /* =========================================== *\
   end of gallery
 \* =========================================== */
-
-
+  let mouseEvent = $('body');
+  mouseEvent.on('mouseenter', 'li', function() {
+    $(this).css('color', 'lightgreen');
+  })
 
   // window.location.replace('https://google.com')
 
