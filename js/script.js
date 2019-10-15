@@ -243,6 +243,20 @@ $(function() {
     
     alert('Welcome back ' + username + ' from ' + domain + "!");
   }
+
+  let logDiv = $('#log'),
+      btnElm = $('button');
+
+  for( var i = 0; i < btnElm.length; i++ ) {
+    btnElm.eq(i).on('click', { value: i }, function(event) {
+      var msg = [
+        "button = " + $(this).index(),
+        "event.data.value = " + event.data.value,
+        "i = " + i
+      ];
+      logDiv.append( msg.join(',' ) + '<br>' );
+    });
+  }
   // window.location.replace('https://google.com')
 
   // var uriV = document.querySelector('#special-link').setAttribute('style', 'color:red');
