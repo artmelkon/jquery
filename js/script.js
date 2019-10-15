@@ -257,6 +257,10 @@ $(function() {
       logDiv.append( msg.join(',' ) + '<br>' );
     });
   }
+
+  $('.fruit').on('click', function() {
+    console.log($(('fruit:checked')).attr('checked', true))
+  })
   // window.location.replace('https://google.com')
 
   // var uriV = document.querySelector('#special-link').setAttribute('style', 'color:red');
