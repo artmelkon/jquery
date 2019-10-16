@@ -43,8 +43,26 @@
 }
 
 .emphasize {
-  color: #666;  
+  color: #666;
   font-style: italic;
+}
+
+.gallery {
+  /* height: 400px; */
+  /* width: 600px; */
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery img {
+  /* position: absolute; */
+  /* height: 400px; */
+  /* width: 600px; */
+  /* left: 600px; */
+}
+
+.gallery img:nth-child(1) {
+  left: 0;
 }
 
 fieldset {
@@ -130,10 +148,5 @@ h2 {
 
 .fancy-link:hover:after {
   transform: scaleX(1); }
-
-  img {
-    display: block;
-    width: 100%;
-  }
 
 /*# sourceMappingURL=style.css.map */

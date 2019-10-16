@@ -259,8 +259,15 @@ $(function() {
   }
 
   $('.fruit').on('click', function() {
-    console.log($(('fruit:checked')).attr('checked', true))
+    $(this).is(':checked');
+    console.log($(this).prop('checked'))
   })
+  
+
+
+  let galleryItems = $('.gallery').find('img');
+  galleryItems.css('width', '33%').css('opacity', '0.7');
+
   // window.location.replace('https://google.com')
 
   // var uriV = document.querySelector('#special-link').setAttribute('style', 'color:red');
