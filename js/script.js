@@ -288,14 +288,39 @@ $(function() {
     }
   })
 
+  // input email doesn't work with collins
   let inputFields = $('input:text, input[type="email"], input:password, textarea');
   inputFields.focus( function() {
-    $(this).css('box-shadow', '0 0 4px #666');
+    $(this).css('boxShadow', '0 0 4px #666');
   });
 
+  // inputFields.blur(function() {
+  //   $(this).css('boxShadow', 'none');
+  // })
 
-  let logDiv = $('#log'),
-  btnElm = $('button');
+  let validateInput = $('input:text');
+  validateInput.on('focusout blur', function() {
+    let str = $(this).val();
+    if( str.length >= 3 ) {
+      $(this).css('boxShadow', '0 0 4px #32a852');
+      $(this).prepend('<p>Thank you for submission!</p>')
+    } else if (str.length < 3 ) {
+      $(this).css('boxShadow', '0 0 4px #f00');
+      $(this).prepend('<p>Please enter at least 3 characters!</p>')
+    }
+  });
+
+  let checkBox = $('#cbx');
+  checkBox.on('change', function() {
+    if( $(this).is(':checked', true) ) {
+      $(this).add('label[for="cbx"]').css('boxShadow', '0 0 4px #181');
+    } else {
+      $(this).add('label[for="cbx"]').css('boxShadow', '0 0 4px #811');
+    }
+  })
+
+let logDiv = $('#log'),
+btnElm = $('button');
 
 for( var i = 0; i < btnElm.length; i++ ) {
 btnElm.eq(i).on('click', { value: i }, function(event) {
