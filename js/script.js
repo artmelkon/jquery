@@ -244,25 +244,6 @@ $(function() {
     alert('Welcome back ' + username + ' from ' + domain + "!");
   }
 
-  let logDiv = $('#log'),
-      btnElm = $('button');
-
-  for( var i = 0; i < btnElm.length; i++ ) {
-    btnElm.eq(i).on('click', { value: i }, function(event) {
-      var msg = [
-        "button = " + $(this).index(),
-        "event.data.value = " + event.data.value,
-        "i = " + i
-      ];
-      logDiv.append( msg.join(',' ) + '<br>' );
-    });
-  }
-
-  $('.fruit').on('click', function() {
-    $(this).is(':checked');
-    console.log($(this).prop('checked'))
-  })
-  
 
 
   let galleryItems = $('.gallery').find('img');
@@ -306,6 +287,33 @@ $(function() {
       }, 50)
     }
   })
+
+  let inputFields = $('input:text, input[type="email"], input:password, textarea');
+  inputFields.focus( function() {
+    $(this).css('box-shadow', '0 0 4px #666');
+  });
+
+
+  let logDiv = $('#log'),
+  btnElm = $('button');
+
+for( var i = 0; i < btnElm.length; i++ ) {
+btnElm.eq(i).on('click', { value: i }, function(event) {
+  var msg = [
+    "button = " + $(this).index(),
+    "event.data.value = " + event.data.value,
+    "i = " + i
+  ];
+  logDiv.append( msg.join(',' ) + '<br>' );
+});
+}
+
+$('.fruit').on('click', function() {
+$(this).is(':checked');
+console.log($(this).prop('checked'))
+})
+
+
 
   // window.location.replace('https://google.com')
 
