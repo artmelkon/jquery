@@ -22,11 +22,11 @@
     <h2>Hi, I'm the Base Project!</h2>
     <p data-mydata="Some data here">Add elements here as you like to try out jQuery. This is your playground to fruit out anything that comes into your mind.</p>
     <p><strong>OR:</strong> Copy this <a id="special-link" href="/url" target="_blank">project structure</a> into a new directory first to create separate playgrounds for animations, manipulations, event handlers etc.</p>
-    <div class="gallery">
+    <!-- <div class="gallery">
       <img src="images/laptop-mobile_small.jpg" alt="">
       <img src="images/laptop-on-table_small.jpg" alt="">
       <img src="images/people-office-group-team_small.jpg" alt="">
-    </div>
+    </div> -->
       <ul id="list">
         <li>
           Main Item 1
@@ -58,14 +58,25 @@
         </li>
       </ul>
       <div>
-        <form action="">
-          <input type="text" name="" id="fname" placeholder="Name" value="Peter"><br>
-          <input type="range" name="" min="1" max="100" step="1" id="" value="8"><br>
-          <input type="email" name="" id="" placeholder="Email"><br>
-          <input type="password" name="" id="" placeholder="Password"><br>
-          <textarea name="" id="" cols="30" rows="10"></textarea><br>
-          <input type="checkbox" name="cb" id="cbx" form="cb" checked>
-          <label for="cbx">Checkbox</label>
+        <form action="" method="post" id="form">
+          <input type="text" name="name" id="name" placeholder="Enter Your Name" />
+          <span id="name-feedback"></span><br>
+
+          <input type="email" name="email" id="email" placeholder="Email">
+          <span id="email-feedback"></span><br>
+
+          <input type="password" name="password" id="pass" placeholder="Password">
+          <span id="password-feedback"></span><br>
+
+          <input type="range" id="amount" min="1" max="100" step="1"><br>
+
+          <textarea name="massage" id="message" cols="30" rows="10"></textarea>
+          <span id="message-feedback"></span><br>
+
+          <input type="checkbox" name="cb" id="checkbox"">
+          <label for="cbx">I Accept</label>
+          <span id="checkbox-feedback"></span>
+
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -78,6 +89,14 @@
         <input type="submit" value="Submit">
       </form>
   </div>
+  <!-- <div>
+    <select name="" id="opt">
+      <option value="">Option 1</option>
+      <option value="">Option 2</option>
+      <option value="">Option 3</option>
+      <option value="">Option 4</option>
+    </select><br>
+</div>
   <div>
       <button> 0 </button>
       <button> 1 </button>
@@ -91,7 +110,7 @@
       <input type="radio" name="fruit" id="" class="fruit" value="apple"> Apple
       <input type="radio" name="fruit" id="" class="fruit" value="peach"> Peach
       <input type="radio" name="fruit" id="" class="fruit" value="pear" checked> Pear
-    </div>
+    </div> -->
   <script src="js/script.js"></script>
 </body>
 </html>

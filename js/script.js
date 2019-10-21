@@ -225,118 +225,199 @@ $(function() {
 /* =========================================== *\
   end of gallery
 \* =========================================== */
-  let mouseEvent = $('body');
-  mouseEvent.on('mouseenter', 'li', function() {
-    $(this).css('color', 'lightgreen');
-  });
 
-  $('#btn-click').click({
-    user: "Peter",
-    domain: "artmelkon.com"
-  }, function(event) {
-    greetUser(event.data)
-  });
+/* =========================================== * \
+            form validation
+\* =========================================== */
+//   let mouseEvent = $('body');
+//   mouseEvent.on('mouseenter', 'li', function() {
+//     $(this).css('color', 'lightgreen');
+//   });
 
-  function greetUser(userdata) {
-    username =  userdata.user || "Anonymous"
-    domain   =  userdata.domain || 'example.com';
+//   $('#btn-click').click({
+//     user: "Peter",
+//     domain: "artmelkon.com"
+//   }, function(event) {
+//     greetUser(event.data)
+//   });
+
+//   function greetUser(userdata) {
+//     username =  userdata.user || "Anonymous"
+//     domain   =  userdata.domain || 'example.com';
     
-    alert('Welcome back ' + username + ' from ' + domain + "!");
-  }
+//     alert('Welcome back ' + username + ' from ' + domain + "!");
+//   }
 
 
 
-  let galleryItems = $('.gallery').find('img');
-  galleryItems.css('width', '33%').css('opacity', '0.7');
+//   let galleryItems = $('.gallery').find('img');
+//   galleryItems.css('width', '33%').css('opacity', '0.7');
 
-  galleryItems.mouseenter( function() {
-    $(this).stop().fadeTo( 500, 1);
-  });
+//   galleryItems.mouseenter( function() {
+//     $(this).stop().fadeTo( 500, 1);
+//   });
 
-  galleryItems.mouseleave( function() {
-    $(this).stop().fadeTo( 500, 0.7);
-  });
+//   galleryItems.mouseleave( function() {
+//     $(this).stop().fadeTo( 500, 0.7);
+//   });
 
-  galleryItems.click( function() {
-    let source = $(this).attr('src');
-    let image = $('<img>').attr('src', source).css('width', '100%');
+//   galleryItems.click( function() {
+//     let source = $(this).attr('src');
+//     let image = $('<img>').attr('src', source).css('width', '100%');
 
-    // lightbox 
-    $('.lightbox').empty().append(image).fadeIn(2000);
-    $('.lightbox').click( function() {
-      $(this).stop().fadeOut();
-    })
-  });
+//     // lightbox 
+//     $('.lightbox').empty().append(image).fadeIn(2000);
+//     $('.lightbox').click( function() {
+//       $(this).stop().fadeOut();
+//     })
+//   });
 
-  // keypress - evil! stay out of it
-  $('html').keydown(function (event) { 
-    console.log(event.which);
-  });
+//   // keypress - evil! stay out of it
+//   $('html').keydown(function (event) { 
+//     console.log(event.which);
+//   });
 
-  let ARROW_RIGHT = 39;
-  let ARROW_LEFT  = 37;
+//   let ARROW_RIGHT = 39;
+//   let ARROW_LEFT  = 37;
 
-  $('html').keydown( function(event) {
-    if( event.which ===  ARROW_RIGHT) {
-      $('.blue-box').stop().animate({
-        marginLeft: "+=10px"
-      }, 50);
-    } else if ( event.which === ARROW_LEFT ) {
-      $('.blue-box').stop().animate({
-        marginLeft: "-=10px"
-      }, 50)
-    }
-  })
+//   $('html').keydown( function(event) {
+//     if( event.which ===  ARROW_RIGHT) {
+//       $('.blue-box').stop().animate({
+//         marginLeft: "+=10px"
+//       }, 50);
+//     } else if ( event.which === ARROW_LEFT ) {
+//       $('.blue-box').stop().animate({
+//         marginLeft: "-=10px"
+//       }, 50)
+//     }
+//   })
 
-  // input email doesn't work with collins
-  let inputFields = $('input:text, input[type="email"], input:password, textarea');
-  inputFields.focus( function() {
-    $(this).css('boxShadow', '0 0 4px #666');
-  });
+//   // input email doesn't work with collins
+//   let inputFields = $('input:text, input[type="email"], input:password, textarea');
+//   inputFields.focus( function() {
+//     $(this).css('boxShadow', '0 0 4px #666');
+//   });
 
-  // inputFields.blur(function() {
-  //   $(this).css('boxShadow', 'none');
-  // })
+//   // inputFields.blur(function() {
+//   //   $(this).css('boxShadow', 'none');
+//   // })
 
-  let validateInput = $('input:text');
-  validateInput.on('focusout blur', function() {
-    let str = $(this).val();
-    if( str.length >= 3 ) {
-      $(this).css('boxShadow', '0 0 4px #32a852');
-      $(this).prepend('<p>Thank you for submission!</p>')
-    } else if (str.length < 3 ) {
-      $(this).css('boxShadow', '0 0 4px #f00');
-      $(this).prepend('<p>Please enter at least 3 characters!</p>')
-    }
-  });
+//   let validateInput = $('input:text');
+//   validateInput.on('focusout blur', function() {
+//     let str = $(this).val();
+//     if( str.length >= 3 ) {
+//       $(this).css('boxShadow', '0 0 4px #32a852');
+//       $(this).prepend('<p>Thank you for submission!</p>')
+//     } else if (str.length < 3 ) {
+//       $(this).css('boxShadow', '0 0 4px #f00');
+//       $(this).prepend('<p>Please enter at least 3 characters!</p>')
+//     }
+//   });
 
-  let checkBox = $('#cbx');
-  checkBox.on('change', function() {
-    if( $(this).is(':checked', true) ) {
-      $(this).add('label[for="cbx"]').css('boxShadow', '0 0 4px #181');
-    } else {
-      $(this).add('label[for="cbx"]').css('boxShadow', '0 0 4px #811');
-    }
-  })
+//   let checkBox = $('#cbx');
+//   checkBox.on('change', function() {
+//     if( $(this).is(':checked', true) ) {
+//       $(this).add('label[for="cbx"]').css('boxShadow', '0 0 4px #181');
+//     } else {
+//       $(this).add('label[for="cbx"]').css('boxShadow', '0 0 4px #811');
+//     }
+//   })
 
-let logDiv = $('#log'),
-btnElm = $('button');
+// let logDiv = $('#log'),
+// btnElm = $('button');
 
-for( var i = 0; i < btnElm.length; i++ ) {
-btnElm.eq(i).on('click', { value: i }, function(event) {
-  var msg = [
-    "button = " + $(this).index(),
-    "event.data.value = " + event.data.value,
-    "i = " + i
-  ];
-  logDiv.append( msg.join(',' ) + '<br>' );
+// for( var i = 0; i < btnElm.length; i++ ) {
+// btnElm.eq(i).on('click', { value: i }, function(event) {
+//   var msg = [
+//     "button = " + $(this).index(),
+//     "event.data.value = " + event.data.value,
+//     "i = " + i
+//   ];
+//   logDiv.append( msg.join(',' ) + '<br>' );
+// });
+// }
+
+// $('.fruit').on('click', function() {
+// $(this).is(':checked');
+// console.log($(this).prop('checked'))
+// })
+
+// $('#opt').on('change', function() {
+//   var selected = $(this).find(':selected').text();
+//   console.log(selected)
+// });
+
+// $('#form').submit( function(event) {
+//   var textarea = $('#message');
+//   if(textarea.val().trim() === "") {
+//     textarea.css('boxShadow', '0 0 4px #f00');
+//     event.preventDefault();
+//   } else {
+//     //  your code
+//     // form will be submitted
+//   }
+// });
+
+$('#form').submit( function(event) {
+  var name = $('#name').val();
+  var email = $('#email').val();
+  var pass = $('#pass').val();
+  var message = $('#message').val();
+  var checked = $('#checkbox').prop('checked');
+
+  validateNameField(name, event);
+  isValidPassField(pass, event);
+  isValidMessageField(message, event);
+  isValidCheckboxField(checked, event);
 });
+
+function validateNameField(name, event) {
+  if( !isValidName(name) ) {
+    $('#name-feedback').text('Please enter al least two characters!');
+    event.preventDefault();
+  } else {
+    $('#name-feedback').text('Thank you');
+  }
 }
 
-$('.fruit').on('click', function() {
-$(this).is(':checked');
-console.log($(this).prop('checked'))
-})
+function isValidName(name) {
+  return name.length >= 2;
+}
+
+function isValidPassField(pass, event) {
+  if( !isValidPass(pass)) {
+    $('#password-feedback').text('Please enter at least 4 characters containing at least one number!');
+    event.preventDefault();
+  } else {
+    return $('#password-feedback').text("");
+  }
+}
+
+function isValidPass(pass) {
+  return pass.length >= 4 && /.*[0-9].*/.test(pass);
+}
+
+function isValidMessageField( message, event) {
+  if( !isValidMessage(message)) {
+    $('#message-feedback').text('Please enter a message!');
+    event.preventDefault();
+  } else {
+    return $('#message-feedback').text("");
+  }
+}
+
+function isValidMessage(message) {
+  return message.trim() != "";
+}
+
+function isValidCheckboxField(isChecked, event) {
+  if(!isChecked) {
+    $('#checkbox-feedback').text("Please agree to this");
+    event.preventDefault();
+  } else {
+    $('#checkbox-feedback').text('');
+  }
+}
 
 
 
